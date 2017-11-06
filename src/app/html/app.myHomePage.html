@@ -1,0 +1,14 @@
+  <div>
+       <mat-list > 
+         <mat-list-item class="lista" *ngFor="let hero of people" (click)="onSelect(hero)">
+            <mat-icon svgIcon="thumbs-up"></mat-icon>
+            {{hero.name}} {{hero.surname}}
+         </mat-list-item>
+        </mat-list>
+       
+  </div>
+
+  <people-detail [class.hide]="idHero == 0" [hero]="selectedHero" *ngIf="selectedHero"></people-detail>
+
+  
+  

@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="editToolbar">
+        <div class="div-Icon-BackSpace" (click)="closeDialog()">
+            <mat-icon class="backspace-icon" svgIcon="backspace-icon"></mat-icon>     
+        </div> 
+           <h2 mat-dialog-title class="titleDialog">{{data.heros.name}} {{data.heros.surname}}</h2>
+</mat-toolbar>
+<div class="editDiv">
+    <form>
+          <input matInput placeholder="Id"  name="id" [(ngModel)]="id" hidden>
+      <mat-form-field>
+            <input matInput placeholder="Name"  name="name" [(ngModel)]="nameEdited">
+      </mat-form-field><br>
+      <mat-form-field>
+            <input matInput placeholder="Surname" value="{{data.heros.surname}}" name="surname" [(ngModel)]="surnameEdited">
+      </mat-form-field><br>
+      <mat-form-field>
+            <input matInput placeholder="Age" type="number" min="0" max="99" value="{{data.heros.age}}" name="age" [(ngModel)]="ageEdited">
+      </mat-form-field><br>
+      <mat-form-field>
+            <input matInput placeholder="Email" type="email" value="{{data.heros.email}}" name="email" [(ngModel)]="emailEdited">
+      </mat-form-field>
+      <div class="buttonUpdate">
+          <button mat-raised-button color="primary" type="submit" (click)="editHero()" >Update</button>
+          <button mat-raised-button class="annull-Edit-Button" (click)="closeDialog()" >Annulla</button>
+      </div>
+</form> 
+</div> 

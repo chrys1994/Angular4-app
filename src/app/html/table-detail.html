@@ -1,0 +1,22 @@
+<div class="divClass" style="margin-top:50px">
+<label>Dettagli di <b>{{hero.name}}</b></label>
+      
+      <!--button open Edit Dialog 
+      <button mat-raised-button color="accent" (click)="openDialog(hero)">Edit</button> -->
+      <div class="div-edit-icon" title="Edit">
+            <mat-icon svgIcon="edit-icon" (click)="openDialog(hero)" ></mat-icon> 
+      </div>
+      <!--  --> 
+<mat-table #table [dataSource]="datasource">
+  <ng-container matColumnDef="Age">
+        <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+        <mat-cell *matCellDef="let hero"> {{hero.age}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Email">
+        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+        <mat-cell *matCellDef="let hero"> {{hero.email}} </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let hero; columns: displayedColumns;"></mat-row>
+</mat-table>
+</div>
