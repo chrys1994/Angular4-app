@@ -18,7 +18,7 @@ import 'rxjs/add/observable/of';
 
 export class PeopleDetailComponent implements OnInit{
     @Input() hero: Hero;
-    displayedColumns = ['Age','Email'];
+    displayedColumns = ['Age','Email','Action'];
     users:Hero[];
     datasource:TableDataSource;
 
